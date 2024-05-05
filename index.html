@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        function getCurrentDayAndTime() {
+    var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    var currentDate = new Date();
+    var currentDay = days[currentDate.getDay()];
+
+    var hours = currentDate.getHours();
+    var minutes = currentDate.getMinutes();
+    var seconds = currentDate.getSeconds();
+    var ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12; 
+
+    var currentTime = hours + ' ' + ampm + ' : ' + minutes + ' : ' + seconds;
+
+    return "Today is : " + currentDay + ".\nCurrent time is : " + currentTime;
+}
+
+console.log(getCurrentDayAndTime());
+    </script>
+</body>
+</html>
